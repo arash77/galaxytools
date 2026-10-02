@@ -1,0 +1,3 @@
+# Tool config for the CI tests: the LiteLLM proxy runs on the CI host, reached from job containers via the docker0 bridge.
+LITELLM_API_KEY: sk-test
+LITELLM_BASE_URL: "http://172.17.0.1:4000"

@@ -1,0 +1,2 @@
+test-model	test-model	Test model (fake, limit 50 tokens)	text	litellm-test	test
+no-limit-model	no-limit-model	Test model (fake, no limit)	text	litellm-test	test

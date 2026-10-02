@@ -1,0 +1,20 @@
+# LiteLLM proxy used by the CI tests: fake models that answer "OK" without running any model.
+model_list:
+  - model_name: test-model
+    litellm_params:
+      model: openai/test-model
+      api_key: fake
+      mock_response: "OK"
+    model_info:
+      max_input_tokens: 50
+      custom_tokenizer:
+        identifier: openai-community/gpt2
+        revision: main
+        auth_token: null
+  - model_name: no-limit-model
+    litellm_params:
+      model: openai/no-limit-model
+      api_key: fake
+      mock_response: "OK"
+general_settings:
+  master_key: sk-test

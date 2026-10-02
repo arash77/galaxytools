@@ -339,6 +339,15 @@ jobs:
       id: cpu-cores
     - name: Clean dotnet folder for space
       run: rm -Rf /usr/share/dotnet
+    - name: Start LiteLLM proxy with fake models for the llm_hub tests
+      if: contains(needs.setup.outputs.repository-list, 'tools/llm_hub')
+      run: |
+        python -m venv "$RUNNER_TEMP/litellm"
+        "$RUNNER_TEMP/litellm/bin/pip" install --quiet 'litellm[proxy]==1.103.2'
+        nohup "$RUNNER_TEMP/litellm/bin/litellm" --config tools/llm_hub/test-data/litellm_proxy.yaml --host 0.0.0.0 --port 4000 > "$RUNNER_TEMP/litellm.log" 2>&1 &
+        for i in $(seq 1 60); do curl -sf http://127.0.0.1:4000/health/liveliness && break; sleep 2; done
+        ip -4 -o addr show docker0
+        curl -sf http://172.17.0.1:4000/health/liveliness
     - name: Planemo test
       uses: galaxyproject/planemo-ci-action@v1
       id: test
@@ -352,6 +361,11 @@ jobs:
         galaxy-slots: ${{ steps.cpu-cores.outputs.count }}
         # Limit each test to 15 minutes
         test_timeout: 900
+        # llm_hub tests: point the tool to the LiteLLM proxy started above
+        additional-planemo-options: --docker_run_extra_arguments=--env=LITELLM_CONFIG_FILE=${{ github.workspace }}/tools/llm_hub/test-data/llm_hub_test_config.yaml
+    - name: Show LiteLLM proxy log
+      if: always() && contains(needs.setup.outputs.repository-list, 'tools/llm_hub')
+      run: tail -n 100 "$RUNNER_TEMP/litellm.log" || true
     - uses: actions/upload-artifact@v7
       with:
         name: 'Tool test output ${{ matrix.chunk }}'
