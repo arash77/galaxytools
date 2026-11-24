@@ -142,7 +142,7 @@ $method_cond.threshold_max
 **What it does**
 
 <![CDATA[
-Sets lower and upper threshold values, segmenting grayscale imgaes into features of interest and backgorund
+Sets lower and upper threshold values, segmenting grayscale images into features of interest and background
 
 - **Minimum threshold value** - Adjusts the minimum threshold value.
 - **Maximum threshold value** - Adjusts the maximum threshold value.
