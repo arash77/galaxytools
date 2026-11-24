@@ -104,6 +104,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      # TEST ONLY: fake LLM inside the job.
+      - name: "TEST: start fake LLM"
+        run: nohup python3 .github/fake-llm/fake_llm.py 18765 > /tmp/fake_llm.log 2>&1 &
       - run: pip install --no-cache-dir gxy-tool-bot==0.2.4
       - run: pip install "planemo>=0.75.43"
       - name: Install micromamba

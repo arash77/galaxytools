@@ -6,8 +6,8 @@ api:
   # fallback_models:
   #   - agentic
   #   - mini
-  base_url: https://generativelanguage.googleapis.com/v1beta/openai
-  model: gemini-4-hydrogen
+  base_url: http://127.0.0.1:18765
+  model: stub
   max_tool_iterations: 30
   temperature_plan: 0.4
   temperature_generate: 0.2
