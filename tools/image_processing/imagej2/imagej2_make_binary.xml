@@ -40,7 +40,7 @@ $count
         <test>
             <param name="input" value="clown.jpg"/>
             <!-- It seems that metric iou does not work for this test -->
-            <output name="output" file="clown_binary.jpg" compare="image_diff" />
+            <output name="output" file="clown_binary.jpg" compare="image_diff"/>
         </test>
     </tests>
     <help>

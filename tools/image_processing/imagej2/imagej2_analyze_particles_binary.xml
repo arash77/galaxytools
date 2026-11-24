@@ -88,12 +88,12 @@ $circularity_max
             <option value="no" selected="True">No</option>
             <option value="yes">Yes</option>
         </param>
-        <param name="export_rois" type="boolean" truevalue="true" falsevalue="false" checked="false" label="Export particles outlines coordinates" help="Exports particles coordinates as a tabular file, which can be imported as ROIs in OMERO." />
+        <param name="export_rois" type="boolean" truevalue="true" falsevalue="false" checked="false" label="Export particles outlines coordinates" help="Exports particles coordinates as a tabular file, which can be imported as ROIs in OMERO."/>
     </inputs>
     <outputs>
         <data name="output" format_source="input">
             <filter>show != "Nothing"</filter>
-       </data>
+        </data>
         <data format="tabular" name="results" label="${tool.name} (results) on ${on_string}">
             <filter>show == "Nothing" or display_results == "yes"</filter>
         </data>
