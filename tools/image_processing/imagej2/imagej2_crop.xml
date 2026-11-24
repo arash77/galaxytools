@@ -37,16 +37,16 @@ $last_frame
 ]]></command>
     <inputs>
         <expand macro="param_input"/>
-        <param name="xleft" type="integer" min="0" value="0" label="Left coordinate of the cropped region" />
-        <param name="width" type="integer" min="0" value="0" label="Final width in pixel (leave 0 to go to the maximum width)" />
-        <param name="ytop" type="integer" min="0" value="0" label="Top coordinate of the cropped region" />
-        <param name="height" type="integer" min="0" value="0" label="Final height in pixel (leave 0 to go to the maximum height)" />
-        <param name="first_channel" type="integer" min="1" value="1" label="First channel to keep." />
-        <param name="last_channel" type="integer" min="0" value="0" label="Last channel to keep (leave 0 to go to the last channel)." />
-        <param name="first_slice" type="integer" min="1" value="1" label="First slice to keep." />
-        <param name="last_slice" type="integer" min="0" value="0" label="Last slice to keep (leave 0 to the last slice)." />
-        <param name="first_frame" type="integer" min="1" value="1" label="First frame to keep." />
-        <param name="last_frame" type="integer" min="0" value="0" label="Last frame to keep (leave 0 to the last frame)." />
+        <param name="xleft" type="integer" min="0" value="0" label="Left coordinate of the cropped region"/>
+        <param name="width" type="integer" min="0" value="0" label="Final width in pixel (leave 0 to go to the maximum width)"/>
+        <param name="ytop" type="integer" min="0" value="0" label="Top coordinate of the cropped region"/>
+        <param name="height" type="integer" min="0" value="0" label="Final height in pixel (leave 0 to go to the maximum height)"/>
+        <param name="first_channel" type="integer" min="1" value="1" label="First channel to keep."/>
+        <param name="last_channel" type="integer" min="0" value="0" label="Last channel to keep (leave 0 to go to the last channel)."/>
+        <param name="first_slice" type="integer" min="1" value="1" label="First slice to keep."/>
+        <param name="last_slice" type="integer" min="0" value="0" label="Last slice to keep (leave 0 to the last slice)."/>
+        <param name="first_frame" type="integer" min="1" value="1" label="First frame to keep."/>
+        <param name="last_frame" type="integer" min="0" value="0" label="Last frame to keep (leave 0 to the last frame)."/>
     </inputs>
     <outputs>
         <data name="output" format_source="input"/>
@@ -56,8 +56,8 @@ $last_frame
             <param name="input" value="blobs.gif"/>
             <output name="output" file="blobs.gif" compare="image_diff">
                 <assert_contents>
-                    <has_image_height height="144" />
-                    <has_image_width width="144" />
+                    <has_image_height height="144"/>
+                    <has_image_width width="144"/>
                 </assert_contents>
             </output>
         </test>
@@ -66,8 +66,8 @@ $last_frame
             <param name="width" value="50"/>
             <output name="output" file="blobs_crop_width50.gif" compare="image_diff">
                 <assert_contents>
-                    <has_image_height height="144" />
-                    <has_image_width width="50" />
+                    <has_image_height height="144"/>
+                    <has_image_width width="50"/>
                 </assert_contents>
             </output>
         </test>
@@ -76,8 +76,8 @@ $last_frame
             <param name="ytop" value="50"/>
             <output name="output" file="blobs_crop_top50.gif" compare="image_diff">
                 <assert_contents>
-                    <has_image_height height="94" />
-                    <has_image_width width="144" />
+                    <has_image_height height="94"/>
+                    <has_image_width width="144"/>
                 </assert_contents>
             </output>
         </test>
@@ -90,11 +90,11 @@ $last_frame
             <param name="last_channel" value="1"/>
             <output name="output" file="confocal-series-first-channel_cropped.tiff" compare="sim_size">
                 <!-- <assert_contents> -->
-                    <!-- This gives 16 (the width)
+                <!-- This gives 16 (the width)
                     <has_image_channels channels="1" /> -->
-                    <!-- This gives 25 (the slices)
+                <!-- This gives 25 (the slices)
                     <has_image_height height="8" /> -->
-                    <!-- This gives 8 (the height)
+                <!-- This gives 8 (the height)
                     <has_image_width width="16" /> -->
                 <!-- </assert_contents> -->
             </output>
@@ -127,9 +127,9 @@ $last_frame
             <param name="last_slice" value="1"/>
             <output name="output" file="confocal-series-first-channel_cropped_singleZ.tiff" compare="sim_size">
                 <assert_contents>
-                    <has_image_channels channels="1" />
-                    <has_image_height height="8" />
-                    <has_image_width width="16" />
+                    <has_image_channels channels="1"/>
+                    <has_image_height height="8"/>
+                    <has_image_width width="16"/>
                 </assert_contents>
             </output>
         </test>

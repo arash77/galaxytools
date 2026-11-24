@@ -62,8 +62,8 @@ $radius
                 <param name="mask" type="float" value="0.6" min="0.1" max="0.9" label="Mask Weight"/>
             </when>
             <when value="top_hat">
-                <param name="light_background" type="boolean" truevalue="light" falsevalue="" checked="false" label="Light Background" />
-                <param name="dont_substract" type="boolean" truevalue="dont" falsevalue="" checked="false" label="Don't substract (grayscale open)" />
+                <param name="light_background" type="boolean" truevalue="light" falsevalue="" checked="false" label="Light Background"/>
+                <param name="dont_substract" type="boolean" truevalue="dont" falsevalue="" checked="false" label="Don't substract (grayscale open)"/>
             </when>
         </conditional>
         <param name="radius" type="float" value="2.0" label="Radius / Sigma" help="(in pixels)"/>
