@@ -188,7 +188,7 @@ $consistency_weight
                 </action>
             </actions>
         </data>
-        <data name="target_out" format="png"  label="${tool.name} (registered target) ${on_string}">
+        <data name="target_out" format="png" label="${tool.name} (registered target) ${on_string}">
             <filter>advanced_options_cond['advanced_options'] != "mono"</filter>
             <actions>
                 <action type="format">

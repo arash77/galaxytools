@@ -10,7 +10,7 @@
         <xref type="bio.tools">imagej</xref>
         <xref type="biii">imagej2</xref>
     </xrefs>
-    <expand macro="fiji_requirements" />
+    <expand macro="fiji_requirements"/>
     <command detect_errors="exit_code"><![CDATA[
 #import os
 #set input_sans_ext = $os.path.splitext($os.path.basename($input.file_name))[0]
