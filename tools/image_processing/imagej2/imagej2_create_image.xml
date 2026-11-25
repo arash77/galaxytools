@@ -39,9 +39,9 @@ $depth
             <actions>
                 <action type="format">
                     <option type="from_param" name="output_datatype"/>
-                 </action>
-           </actions>
-       </data>
+                </action>
+            </actions>
+        </data>
     </outputs>
     <tests>
         <test>
